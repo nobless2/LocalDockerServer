@@ -31,7 +31,11 @@ jobs:
 
           NOTES_RU="$(jq -r '.notes_ru // ""' latest.json)"
           NOTES_EN="$(jq -r '.notes_en // ""' latest.json)"
-          NOTES=$(printf "## LocalDockerServer %s\n\n### Русский\n%s\n\n### English\n%s\n" "$TAG" "$NOTES_RU" "$NOTES_EN")
+          if [ -n "$NOTES_RU" ] || [ -n "$NOTES_EN" ]; then
+            NOTES=$(printf "## LocalDockerServer %s\n\n### Русский\n%s\n\n### English\n%s\n" "$TAG" "$NOTES_RU" "$NOTES_EN")
+          else
+            NOTES=""
+          fi
 
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" releases/LocalDockerServer.dmg --clobber
