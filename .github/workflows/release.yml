@@ -1,0 +1,48 @@
+name: Publish Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. v1.0.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ inputs.tag }}"
+          fi
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" \
+              releases/LocalDockerServer.dmg \
+              releases/LocalDockerServer-macOS.zip \
+              --clobber
+            gh release edit "$TAG" \
+              --title "LocalDockerServer $TAG" \
+              --notes-file RELEASE_NOTES.md \
+              --latest
+          else
+            gh release create "$TAG" \
+              releases/LocalDockerServer.dmg \
+              releases/LocalDockerServer-macOS.zip \
+              --title "LocalDockerServer $TAG" \
+              --notes-file RELEASE_NOTES.md \
+              --latest
+          fi
