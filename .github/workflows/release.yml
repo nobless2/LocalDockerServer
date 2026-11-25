@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag (e.g. v1.0.0)"
+        description: "Release tag (e.g. v1.0.1)"
         required: true
 
 permissions:
@@ -29,20 +29,16 @@ jobs:
             TAG="${{ inputs.tag }}"
           fi
 
+          NOTES_RU="$(jq -r '.notes_ru // ""' latest.json)"
+          NOTES_EN="$(jq -r '.notes_en // ""' latest.json)"
+          NOTES=$(printf "## LocalDockerServer %s\n\n### Русский\n%s\n\n### English\n%s\n" "$TAG" "$NOTES_RU" "$NOTES_EN")
+
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" \
-              releases/LocalDockerServer.dmg \
-              releases/LocalDockerServer-macOS.zip \
-              --clobber
-            gh release edit "$TAG" \
-              --title "LocalDockerServer $TAG" \
-              --notes-file RELEASE_NOTES.md \
-              --latest
+            gh release upload "$TAG" releases/LocalDockerServer.dmg --clobber
+            gh release edit "$TAG" --title "LocalDockerServer $TAG" --notes "$NOTES" --latest
           else
-            gh release create "$TAG" \
-              releases/LocalDockerServer.dmg \
-              releases/LocalDockerServer-macOS.zip \
+            gh release create "$TAG" releases/LocalDockerServer.dmg \
               --title "LocalDockerServer $TAG" \
-              --notes-file RELEASE_NOTES.md \
+              --notes "$NOTES" \
               --latest
           fi

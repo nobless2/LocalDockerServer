@@ -2,7 +2,7 @@
 
 **LocalDockerServer** — готовое нативное приложение для macOS (аналог OpenServer на базе Docker) для локальной веб-разработки на PHP, MariaDB, Redis и Nginx.
 
-[![Latest Release](https://img.shields.io/github/v/release/nobless2/LocalDockerServerApp?label=Download&style=for-the-badge)](https://github.com/nobless2/LocalDockerServerApp/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/nobless2/LocalDockerServer?label=Download&style=for-the-badge)](https://github.com/nobless2/LocalDockerServer/releases/latest)
 ![macOS 12+](https://img.shields.io/badge/macOS-12.0%2B-000000?style=for-the-badge&logo=apple)
 ![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-arm64-2563eb?style=for-the-badge)
 
@@ -37,7 +37,7 @@
 
 ## Установка и запуск
 
-1. Перейдите на страницу **[Releases](https://github.com/nobless2/LocalDockerServerApp/releases/latest)** и скачайте **`LocalDockerServer.dmg`** (или `LocalDockerServer-macOS.zip`).
+1. Перейдите на страницу **[Releases](https://github.com/nobless2/LocalDockerServer/releases/latest)** и скачайте **`LocalDockerServer.dmg`**.
 2. Откройте `LocalDockerServer.dmg` и перетащите **`LocalDockerServer.app`** в папку **`Applications`** (`Программы`).
 3. Запустите **LocalDockerServer**:
    > Если macOS предупредит о неподписанном разработчике после скачивания из интернета — нажмите по приложению **правой кнопкой мыши → «Открыть»**, либо выполните в терминале:
@@ -55,7 +55,7 @@
 | **Панель управления** | `http://panel.loc` | `http://localhost:8080` |
 | **phpMyAdmin** | `http://pma.loc` | `http://localhost:8081` |
 | **Mailpit (почта)** | `http://mail.loc` | `http://localhost:8025` |
-| **Демо-сайт** | `http://test1.loc` | — |
+| **Демо-сайт** | `http://example.loc` | — |
 
 ### Подключение к БД и Redis из PHP
 
@@ -77,6 +77,6 @@ LocalDockerServer автоматически проверяет наличие �
 
 **LocalDockerServer** is a standalone native macOS Docker-based local web development environment (OpenServer alternative) featuring on-demand PHP versions (`7.4`, `8.1`, `8.2`, `8.3`, `8.4`), automatic `*.loc` wildcard domains & local HTTPS, Nginx, MariaDB, phpMyAdmin, Redis, Mailpit, full Russian/English UI, built-in Settings, and automatic daily updates.
 
-1. Download **`LocalDockerServer.dmg`** from the **[Latest Release](https://github.com/nobless2/LocalDockerServerApp/releases/latest)**.
+1. Download **`LocalDockerServer.dmg`** from the **[Latest Release](https://github.com/nobless2/LocalDockerServer/releases/latest)**.
 2. Drag **`LocalDockerServer.app`** into `/Applications`.
 3. Make sure **Docker Desktop** or **OrbStack** is running, then launch **LocalDockerServer** and click **Start**.
