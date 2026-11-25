@@ -1,10 +1,10 @@
 {
-  "version": "1.0.1",
-  "tag": "v1.0.1",
-  "published_at": "2026-11-25T14:03:36Z",
-  "release_url": "https://github.com/nobless2/LocalDockerServer/releases/tag/v1.0.1",
-  "download_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.1/LocalDockerServer.dmg",
-  "dmg_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.1/LocalDockerServer.dmg",
-  "notes_ru": "Автоматическое скрытие панели логов запуска после успешного старта сервера.",
-  "notes_en": "Automatically hide the startup log drawer once the server finishes starting."
+  "version": "1.0.2",
+  "tag": "v1.0.2",
+  "published_at": "2026-11-25T14:21:48Z",
+  "release_url": "https://github.com/nobless2/LocalDockerServer/releases/tag/v1.0.2",
+  "download_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.2/LocalDockerServer.dmg",
+  "dmg_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.2/LocalDockerServer.dmg",
+  "notes_ru": "Переименован демо-сайт test1.loc в example.loc, в таблице проектов оставлен индикатор статуса без подписи, в сервисах Docker статус «Не установлен» заменён на кликабельную кнопку «Установить», упрощены подписи в настройках и обновлён репозиторий автообновлений.",
+  "notes_en": "Renamed demo site test1.loc to example.loc, simplified project status column to a dot indicator, changed Docker services uninstalled badge to a clickable Install button, simplified Settings labels, and updated auto-update repository."
 }
