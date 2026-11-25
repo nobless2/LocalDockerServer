@@ -1,11 +1,11 @@
 {
-  "version": "1.0.9",
-  "tag": "v1.0.9",
-  "published_at": "2026-11-25T16:10:35Z",
-  "release_url": "https://github.com/nobless2/LocalDockerServer/releases/tag/v1.0.9",
-  "download_url": "https://raw.githubusercontent.com/nobless2/LocalDockerServer/v1.0.9/releases/LocalDockerServer.dmg",
-  "dmg_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.9/LocalDockerServer.dmg",
-  "raw_dmg_url": "https://raw.githubusercontent.com/nobless2/LocalDockerServer/v1.0.9/releases/LocalDockerServer.dmg",
+  "version": "1.0.10",
+  "tag": "v1.0.10",
+  "published_at": "2026-11-25T16:11:06Z",
+  "release_url": "https://github.com/nobless2/LocalDockerServer/releases/tag/v1.0.10",
+  "download_url": "https://raw.githubusercontent.com/nobless2/LocalDockerServer/v1.0.10/releases/LocalDockerServer.dmg",
+  "dmg_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.10/LocalDockerServer.dmg",
+  "raw_dmg_url": "https://raw.githubusercontent.com/nobless2/LocalDockerServer/v1.0.10/releases/LocalDockerServer.dmg",
   "notes_ru": "Улучшения и исправления",
   "notes_en": "Improvements and fixes"
 }
