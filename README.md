@@ -23,12 +23,6 @@
   - **Redis 7** — кэш и очереди;
   - **Mailpit** (`http://mail.loc`) — локальный перехват исходящей почты (`mail()` уже настроен);
   - **PHP / Composer CLI** — выполнение команд внутри нужного PHP-контейнера прямо из панели.
-- **Настройки приложения**:
-  - переключение языка интерфейса (**Русский / English**);
-  - выбор и смена рабочей папки;
-  - редактирование портов и параметров `.env` прямо из интерфейса;
-  - управление Wildcard DNS, доверием HTTPS (Root CA) и `/etc/hosts`.
-- **Автоматические обновления** — приложение автоматически проверяет новые релизы и позволяет проверить и установить обновление вручную из меню или окна настроек.
 
 ### Требования
 
@@ -69,12 +63,6 @@
   - **Redis 7** — caching and queues;
   - **Mailpit** (`http://mail.loc`) — local outgoing email catcher (`mail()` preconfigured);
   - **PHP / Composer CLI** — run commands inside any PHP container right from the panel.
-- **Application Settings**:
-  - switch interface language (**Русский / English**);
-  - choose and change the working directory;
-  - edit ports and `.env` settings directly from the UI;
-  - manage Wildcard DNS, HTTPS trust (Root CA), and `/etc/hosts`.
-- **Automatic Updates** — automatically checks for new releases and supports manual update checks and installation from the menu or Settings window.
 
 ### Requirements
 
