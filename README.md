@@ -1,14 +1,18 @@
 # LocalDockerServer for macOS
 
-**LocalDockerServer** — готовое нативное приложение для macOS (аналог OpenServer на базе Docker) для локальной веб-разработки на PHP, MariaDB, Redis и Nginx.
-
 [![Latest Release](https://img.shields.io/github/v/release/nobless2/LocalDockerServer?label=Download&style=for-the-badge)](https://github.com/nobless2/LocalDockerServer/releases/latest)
 ![macOS 12+](https://img.shields.io/badge/macOS-12.0%2B-000000?style=for-the-badge&logo=apple)
 ![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-arm64-2563eb?style=for-the-badge)
 
+[Русский](#русский) · [English](#english)
+
 ---
 
-## Возможности
+## Русский
+
+**LocalDockerServer** — готовое нативное приложение для macOS (аналог OpenServer на базе Docker) для локальной веб-разработки на PHP, MariaDB, Redis и Nginx.
+
+### Возможности
 
 - **Готовое macOS-приложение (`LocalDockerServer.app`)** — нативный интерфейс со строкой меню (треем), встроенной веб-панелью управления и консолью логов.
 - **Несколько версий PHP по требованию** — при первом запуске быстро разворачивается **PHP 8.4**, а **PHP 7.4, 8.1, 8.2 и 8.3** устанавливаются в один клик прямо из панели. В каждой версии уже есть `pdo_mysql`, `mysqli`, `pdo_pgsql`, `gd`, `intl`, `zip`, `bcmath`, `exif`, `sockets`, `pcntl`, `redis`, `xdebug` и `composer`.
@@ -24,31 +28,14 @@
   - выбор и смена рабочей папки;
   - редактирование портов и параметров `.env` прямо из интерфейса;
   - управление Wildcard DNS, доверием HTTPS (Root CA) и `/etc/hosts`.
-- **Автоматические обновления** — приложение проверяет новые релизы раз в день и позволяет проверить и установить обновление вручную из меню или окна настроек.
+- **Автоматические обновления** — приложение автоматически проверяет новые релизы и позволяет проверить и установить обновление вручную из меню или окна настроек.
 
----
-
-## Требования
+### Требования
 
 - **macOS 12.0+** (Apple Silicon `arm64`)
 - Установленный **Docker Desktop**, **OrbStack** или **Rancher Desktop**
 
----
-
-## Установка и запуск
-
-1. Перейдите на страницу **[Releases](https://github.com/nobless2/LocalDockerServer/releases/latest)** и скачайте **`LocalDockerServer.dmg`**.
-2. Откройте `LocalDockerServer.dmg` и перетащите **`LocalDockerServer.app`** в папку **`Applications`** (`Программы`).
-3. Запустите **LocalDockerServer**:
-   > Если macOS предупредит о неподписанном разработчике после скачивания из интернета — нажмите по приложению **правой кнопкой мыши → «Открыть»**, либо выполните в терминале:
-   > ```bash
-   > xattr -cr /Applications/LocalDockerServer.app
-   > ```
-4. Нажмите **«▶ Запустить LocalDockerServer»** — приложение само развернёт Docker-стек в рабочую папку (по умолчанию `~/LocalDockerServer`, можно изменить в **Настройках**), настроит домены `*.loc` и HTTPS и откроет панель управления.
-
----
-
-## Быстрый доступ после запуска
+### Быстрый доступ после запуска
 
 | Сервис | Локальный домен | Прямой адрес |
 |---|---|---|
@@ -57,7 +44,7 @@
 | **Mailpit (почта)** | `http://mail.loc` | `http://localhost:8025` |
 | **Демо-сайт** | `http://example.loc` | — |
 
-### Подключение к БД и Redis из PHP
+#### Подключение к БД и Redis из PHP
 
 | Сервис | Хост из PHP (Docker) | Хост с Mac | Доступ |
 |---|---|---|---|
@@ -67,16 +54,46 @@
 
 ---
 
-## Обновление приложения
+## English
 
-LocalDockerServer автоматически проверяет наличие новых версий в этом репозитории **1 раз в день**. Также можно проверить обновления вручную через **LocalDockerServer → Проверить обновления…**, меню в строке состояния или раздел **Настройки**.
+**LocalDockerServer** is a ready-to-use native macOS application (a Docker-based OpenServer alternative) for local web development with PHP, MariaDB, Redis, and Nginx.
 
----
+### Features
 
-## English Overview
+- **Native macOS App (`LocalDockerServer.app`)** — native interface with a menu bar (tray) icon, built-in web control panel, and startup log console.
+- **Multiple PHP Versions on Demand** — **PHP 8.4** is set up quickly on first launch, while **PHP 7.4, 8.1, 8.2, and 8.3** can be installed in one click directly from the control panel. Every version includes `pdo_mysql`, `mysqli`, `pdo_pgsql`, `gd`, `intl`, `zip`, `bcmath`, `exif`, `sockets`, `pcntl`, `redis`, `xdebug`, and `composer`.
+- **Automatic Local Domains (`*.loc`) & HTTPS** — create a folder inside `projects/` (for example, `projects/mysite.loc`), and your site immediately becomes available at `http://mysite.loc` and `https://mysite.loc`. Wildcard DNS and a trusted local Root CA are configured automatically.
+- **Full Stack Out of the Box**:
+  - **Nginx** — automatic virtual host generation and Document Root configuration (`/`, `/public`, `/web`, etc.);
+  - **MariaDB 10.11** + database management and **phpMyAdmin** (`http://pma.loc`);
+  - **Redis 7** — caching and queues;
+  - **Mailpit** (`http://mail.loc`) — local outgoing email catcher (`mail()` preconfigured);
+  - **PHP / Composer CLI** — run commands inside any PHP container right from the panel.
+- **Application Settings**:
+  - switch interface language (**Русский / English**);
+  - choose and change the working directory;
+  - edit ports and `.env` settings directly from the UI;
+  - manage Wildcard DNS, HTTPS trust (Root CA), and `/etc/hosts`.
+- **Automatic Updates** — automatically checks for new releases and supports manual update checks and installation from the menu or Settings window.
 
-**LocalDockerServer** is a standalone native macOS Docker-based local web development environment (OpenServer alternative) featuring on-demand PHP versions (`7.4`, `8.1`, `8.2`, `8.3`, `8.4`), automatic `*.loc` wildcard domains & local HTTPS, Nginx, MariaDB, phpMyAdmin, Redis, Mailpit, full Russian/English UI, built-in Settings, and automatic daily updates.
+### Requirements
 
-1. Download **`LocalDockerServer.dmg`** from the **[Latest Release](https://github.com/nobless2/LocalDockerServer/releases/latest)**.
-2. Drag **`LocalDockerServer.app`** into `/Applications`.
-3. Make sure **Docker Desktop** or **OrbStack** is running, then launch **LocalDockerServer** and click **Start**.
+- **macOS 12.0+** (Apple Silicon `arm64`)
+- **Docker Desktop**, **OrbStack**, or **Rancher Desktop**
+
+### Quick Access After Startup
+
+| Service | Local Domain | Direct URL |
+|---|---|---|
+| **Control Panel** | `http://panel.loc` | `http://localhost:8080` |
+| **phpMyAdmin** | `http://pma.loc` | `http://localhost:8081` |
+| **Mailpit (Mail)** | `http://mail.loc` | `http://localhost:8025` |
+| **Demo Site** | `http://example.loc` | — |
+
+#### Connecting to MariaDB & Redis from PHP
+
+| Service | Host from PHP (Docker) | Host from Mac | Credentials |
+|---|---|---|---|
+| **MariaDB** | `db:3306` | `127.0.0.1:3306` | `dev` / `dev` or `root` / `root` |
+| **Redis** | `redis:6379` | `127.0.0.1:6379` | no password |
+| **Mailpit (SMTP)** | `mailpit:1025` | — | `mail()` works out of the box |
