@@ -1,11 +1,11 @@
 {
   "version": "1.0.11",
   "tag": "v1.0.11",
-  "published_at": "2026-11-25T17:45:59Z",
+  "published_at": "2026-11-26T07:40:40Z",
   "release_url": "https://github.com/nobless2/LocalDockerServer/releases/tag/v1.0.11",
   "download_url": "https://raw.githubusercontent.com/nobless2/LocalDockerServer/v1.0.11/releases/LocalDockerServer.dmg",
   "dmg_url": "https://github.com/nobless2/LocalDockerServer/releases/download/v1.0.11/LocalDockerServer.dmg",
   "raw_dmg_url": "https://raw.githubusercontent.com/nobless2/LocalDockerServer/v1.0.11/releases/LocalDockerServer.dmg",
-  "notes_ru": "Новая плоская иконка в строке меню (трей) вместо текстового индикатора: статус сервера отображается в меню.",
-  "notes_en": "New flat menu-bar (tray) icon replaces the text indicator; server status is shown in the menu."
+  "notes_ru": "",
+  "notes_en": ""
 }
